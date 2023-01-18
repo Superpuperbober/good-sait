@@ -1,0 +1,299 @@
+body
+	top 100px
+	color #212529
+	margin 0
+	padding 0
+	line-height 1.4
+	font-family -apple-system,BlinkMacSystemFont,Open Sans,Roboto,Helvetica Neue,Helvetica,sans-serif
+	overflow-x hidden
+	position relative
+	display block
+	box-sizing border-box
+	background #f2f2f3
+
+.centralBlock
+	margin auto
+	width 90%
+	min-height 700px
+	min-width 100px
+	a
+		color black
+		text-decoration none
+	a:hover
+		text-decoration orange
+		color orange
+	.galleryGrid
+		display grid
+		grid-template-columns  repeat(10,1fr)
+		grid-template-rows 1fr
+		column-gap 20px
+		justify-items stretch
+		grid-template-areas "description A B C D E F G H I"
+		height auto
+		margin-bottom 4vh
+		background #ffffff
+		padding 10px
+		align-items center
+		vertical-align center
+		//padding-bottom 30px
+		img
+			height 100%
+			width 100%
+			margin-top 15px
+			padding-bottom 15px
+			padding-right 5px
+			padding-left 5px
+		//border thin solid black
+		img:hover
+			width 110%
+			height 110%
+			transition 0.5s
+			margin-top 0
+			padding-bottom 10px
+		img:not(:hover)
+			transition 0.5s
+		.description
+			grid-area description
+			p
+				font-size 12pt
+				text-align justify
+			.top
+				p
+					font-size 15pt
+					font-weight bold
+				p:hover
+					text-decoration #c4beba
+					color #c4beba
+				p:not(:hover)
+					transition 0.5s
+		.img1
+			grid-area A
+		.img2
+			grid-area B
+		.img3
+			grid-area C
+		.img4
+			grid-area D
+		.img5
+			grid-area E
+		.img6
+			grid-area F
+		.img7
+			grid-area G
+		.img8
+			grid-area H
+		.img9
+			grid-area I
+			p
+				font-size 12pt
+				text-align justify
+			.top
+				p
+					font-size 15pt
+					font-weight bold
+				p:hover
+					text-decoration #c4beba
+					color #c4beba
+				p:not(:hover)
+					transition 0.5s
+	.galleryBIGGrid
+		display grid
+		grid-template-columns  repeat(5,1fr)
+		grid-template-rows 0.2fr 1fr 1fr
+		column-gap 20px
+		justify-items stretch
+		grid-template-areas "upu upu upu upu upu""A B C D E" "F G H I description"
+		height auto
+		margin-bottom 4vh
+		background #ffffff
+		padding 10px
+		align-items center
+		vertical-align center
+		//padding-bottom 30px
+		img
+			height 100%
+			width 100%
+			margin-top 15px
+			padding-top 15px
+			padding-bottom 15px
+			padding-right 5px
+			padding-left 5px
+			//border thin solid black
+		img:hover
+			width 105%
+			height 105%
+			transition 0.5s
+			margin-top 0
+			padding-bottom 10px
+		img:not(:hover)
+			transition 0.5s
+		.description
+			grid-area description
+			p
+				font-size 12pt
+				text-align justify
+			.top
+				p
+					font-size 15pt
+					font-weight bold
+				p:hover
+					text-decoration #c4beba
+					color #c4beba
+				p:not(:hover)
+					transition 0.5s
+		.img1
+			grid-area A
+		.img2
+			grid-area B
+		.img3
+			grid-area C
+		.img4
+			grid-area D
+		.img5
+			grid-area E
+		.img6
+			grid-area F
+		.img7
+			grid-area G
+		.img8
+			grid-area H
+		.img9
+			grid-area I
+		.upu
+			grid-area upu
+			font-size 22pt
+			font-weight bold
+			text-align center
+	.galleryDOUBLEGrid
+		display grid
+		grid-template-columns  repeat(3,1fr) 1fr repeat(3,1fr)
+		grid-template-rows 1fr 1fr 1fr
+		column-gap 20px
+		justify-items stretch
+		grid-template-areas "upu upu upu . uvu uvu uvu""A B C . AA BB CC" "D E F . . . ." "G H I . . . ."
+		height auto
+		margin-bottom 4vh
+		background #111010
+		padding 10px
+		align-items center
+		vertical-align center
+		//padding-bottom 30px
+		img
+			height 100%
+			width 100%
+			margin-top 15px
+			padding-bottom 15px
+			padding-right 5px
+			padding-left 5px
+		//border thin solid black
+		img:hover
+			width 110%
+			height 110%
+			transition 0.5s
+			margin-top 0
+			padding-bottom 10px
+		img:not(:hover)
+			transition 0.5s
+		.img1
+			grid-area A
+		.img2
+			grid-area B
+		.img3
+			grid-area C
+		.img4
+			grid-area D
+		.img5
+			grid-area E
+		.img6
+			grid-area F
+		.img7
+			grid-area G
+		.img8
+			grid-area H
+		.img9
+			grid-area I
+		.upu
+			grid-area upu
+			font-size 22pt
+			font-weight bold
+			text-align center
+			color #c4beba
+		.uvu
+			grid-area uvu
+			font-size 22pt
+			font-weight bold
+			text-align center
+			color #c4beba
+		.AA
+			grid-area AA
+		.BB
+			grid-area BB
+		.CC
+			grid-area CC
+.menuFlex
+	background-color #070602
+	position fixed
+	padding padding/2
+	display flex
+	flex-direction row
+	justify-content space-around
+	width 100%
+	top 0
+	padding 0 20px
+	height 57px
+	//overflow hidden
+	.imgItem
+		margin-top 3px
+		margin-right 40px
+		padding-left 0
+		margin-left 0
+		width 10%
+		height 10%
+	span
+		top 10px
+		margin-top 1px
+		background-color #e48f13
+		padding 20px
+	//border 1px solid black
+	.menuItem
+		font-size 16pt
+		text-align: center;
+		top 10px
+		//
+		// border 1px solid black
+		justify-content space-around
+		vertical-align center
+		line-height: 2.5em;
+		color white
+		a
+			text-decoration none
+			font-weight: bold
+			color white
+		a:hover
+			background-color #c4beba
+			padding 5px
+			transition 0.3s
+		a:not(:hover)
+			transition 0.5s
+@media (max-width: 520px)
+	.menuFlex
+		span
+			line-height 1em
+		.menuItem
+			line-height 2em
+@media (max-width: 700px)
+	.centralBlock
+		.galleryGrid
+			grid-template-columns 1fr 1fr
+			grid-template-rows auto auto auto auto  auto auto
+			grid-template-areas "description description""A B""C D""E F""G H""I ."
+		.galleryBIGGrid
+			grid-template-columns 1fr 1fr
+			grid-template-rows auto auto auto auto  auto auto auto
+			grid-template-areas "upu upu""A B" "C D" "E F" "G H" "I description"
+		.galleryDOUBLEGrid
+			grid-template-columns 1fr 1fr
+			grid-template-rows auto auto auto auto  auto auto auto auto
+			grid-template-areas "upu upu""A B" "C D" "E F" "G H" "I ." "uvu uvu" "AA BB" "CC ."
+@import list
+@import paul

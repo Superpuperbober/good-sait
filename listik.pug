@@ -1,0 +1,102 @@
+extends template
+block variables
+    -    var title = 'Статистика'
+    -   const columnNames = ['Название машины', 'Марка','Страна производитель','Рыночная стоимость, руб.','Кол-во лошадиных сил','В какой части фильма снималась']
+    -   const carNames = ['Supra','Skyline GT-R R34','RX-7 Veilside FD','Grand National GNX','Corvette Stingray Grand Sport','GT-R R35','Challenger SRT-8','DB9','Fleetline Race Car','Civic Si Coupe','Silvia S14','Eclipse GSX','F-150','Jetta','Cefiro','S2000','Charger 1970','Lancer Evolution VII','Eclipse Spyder','Navigator','Ram','Camaro SS 1969','Mustang Fastback','Monte Carlo','C-West Silvia S15','VeilSide  350Z','Touran','M5 E39','Impreza WRX STi','Gran Torino','Cayman S','911 GT3 RS','Maverick','Challenger SRT-8','Charger SRT-8','Escort','Crown Victoria','Barracuda','Road Runner','Viper SRT-10','458 Italia','NSX','Aventador','Torino','Integra Coupe','BRZ','Cooper','LM002','570S','Gladiator']
+    -   const marka = ['Toyota','Nissan','Mazda','Buick','Chevrolet','Nissan','Dodge','Aston Martin','Chevrolet','Honda','Nissan','Mitsubishi','Ford','Volkswagen','Nissan','Honda','Dodge','Mitsubishi','Mitsubishi','Lincoln','Dodge','Chevrolet','Ford','Chevrolet','Nissan','Nissan','Volkswagen','BMW','Subaru','Ford','Porsche','Porsche','Ford','Dodge','Dodge','Ford','Ford','Plymouth','Plymouth','Dodge','Ferrari','Honda','Lamborghini','Ford','Honda','Subaru','MINI','Lamborghini','Mclaren','Jeep']
+    -   const country = ['Япония','Япония','Япония','США','США','Япония','США','Великобритания','США','Япония','Япония','Япония','США','Германия','Япония','Япония','США','Япония','Япония','США','США','США','США','США','Япония','Япония','Германия','Германия','Япония','США','Германия','Германия','США','США','США','США','США','США','США','США','Италия','Япония','Италия','США','Япония','Япония','Великобритания','Италия','Великобритания','США']
+    -   const price = ['3 500 000','2 100 000','3 700 000','700 000','800 000','5 900 000','3 000 000','6 500 000','420 000','2 100 000','2 200 000','650 000','1 900 000','780 000','180 000','2 600 000','17 000 000','800 000','650 000','440 000','4 100 000','7 000 000','1 900 000','900 000','3 000 000','1 250 000','1 200 000','1 300 000','1 900 000','2 700 000','10 000 000','16 000 000','2 100 000','3 000 000','2 700 000','1 300 000','800 000','2 000 000','4 500 000','5 500 000','17 000 000','1 500 000','37 000 000','3 700 000','400 000','1 900 000','2 200 000','3 200 000','14 300 000','6 750 000']
+    -   const power = ['280','280','310','154','485','540','305','507','90','220','160','140','302','170','155','240','375','280','144','300','350','420','250','160','180','280','160','400','310','220','350','510','210','300','470','170','170','350','540','407','570','280','740','360','120','200','200','322','570','285']
+    -   const part = ['1','2','3','4','5','6','6','7','8','1','2','1','1','1','2','4','1','2','2','2','2','5','3','3','3','3','3','4','4','4','5','5','5','5','5','6','6','7','7','7','7','4','7','7','2','8','8','6','8','8']
+
+block content
+    .galleryGridsort
+        .details_block
+            details
+                summary График
+                form
+                    .field
+                        legend Значение по оси OX:
+                            br
+                            input(type='radio' name='Y' value='marka')
+                            |  Марка
+                            br
+                            input(type='radio' name='Y' value='country')
+                            |  Страна производитель
+                            br
+                    .field
+                        legend Результат:
+                            br
+                            input(type='radio' name='X' value='maxprice')
+                            |  Максимальная цена
+                            br
+                            input(type='radio' name='X' value='maxpower')
+                            |  Максимальное кол-во л.с.
+                            br
+                            input(type='radio' name='X' value='minprice')
+                            |  Минимальная цена
+                            br
+                            input(type="button" value="Построить")
+        .details_block
+            details
+                summary Фильтр
+                br
+                label Марка:
+                    input(type='text' name='name' id='marka')
+                br
+                label Страна производитель:
+                    input(type='text' name='author' id='country')
+                br
+                label Рыночная стоимость, руб:
+                    input(type='text' name='publisher' id='price')
+                br
+                label Кол-во лошадиных сил:
+                    input(type='text' name='audith' id='power')
+                br
+                input(type='button' value='Найти')
+                br
+        .details_block
+            details
+                summary Сортировка
+                br
+                | Первый уровень:
+                select(name='audith')
+                    option(value='0' selected) Нет
+                    option(value='1') Название машины
+                    option(value='2') Марка
+                    option(value='3') Кол-во лошадиных сил
+                br
+                br
+                | Второй уровень:
+                select(name='author')
+                    option(value='0' selected) Нет
+                    option(value='1') Название машины
+                    option(value='2') Марка
+                    option(value='3') Кол-во лошадиных сил
+                br
+                br
+                | Третий уровень:
+                select(name='name')
+                    option(value='0' selected) Нет
+                    option(value='1') Название машины
+                    option(value='2') Марка
+                    option(value='3') Кол-во лошадиных сил
+                br
+                br
+                input(type='button' value='Найти')
+
+    -   var i = 0
+    .tableBlock
+        table
+            tr
+                each name in columnNames
+                    th=name
+            while i < 50
+                tr
+                    td=carNames[i]
+                    td=marka[i]
+                    td=country[i]
+                    td=price[i]
+                    td=power[i]
+                    td=part[i]
+                - i++
